@@ -10,11 +10,11 @@
     - name: download wordpress tarball
       get_url:
         url: "https://tw.wordpress.org/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
-        # dest: /tmp/
-        dest: "{{ wordpress_parent_path }}"
+        dest: /tmp/
+        # dest: "{{ wordpress_parent_path }}"
 
     - name: extract wordpress tarball (command)
-      command: "tar -zxvf {{ wordpress_parent_path }}/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
+      command: "tar -zxvf /tmp/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
     # - name: extract wordpress tarball
     #   unarchive:
     #     src: "/{{ wordpress_parent_path }}/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
