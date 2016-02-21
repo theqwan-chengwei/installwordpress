@@ -11,7 +11,7 @@
       get_url:
         url: "https://tw.wordpress.org/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
         # dest: /tmp/
-        dest: {{ wordpress_parent_path }}
+        dest: "{{ wordpress_parent_path }}"
 
     - name: extract wordpress tarball
       unarchive:
