@@ -1,9 +1,9 @@
 ---
 # vars file for installwordpress
-
+    vagrant_ip: 10.0.0.10
     hostname: mywordpress
     modify_hostname: true
-
+    wp5minute_install: true
     wordpress_version: 4.4.2
     wordpress_parent_path: /usr/share
     wordpress_path:        "{{ wordpress_parent_path }}/wordpress"
