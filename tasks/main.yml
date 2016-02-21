@@ -2,7 +2,7 @@
 # tasks file for installwordpress
 
     - name: ==> add host info
-      lineinfile: dest=/etc/hosts line="10.0.0.10  {{ hostname }}" state=present
+      lineinfile: dest=/etc/hosts line="{{ vagrant_ip }} {{ hostname }}" state=present
       when: modify_hostname
 
     - debug: msg="==> download and extract wordpress"
