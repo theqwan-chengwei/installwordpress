@@ -13,13 +13,15 @@
         # dest: /tmp/
         dest: "{{ wordpress_parent_path }}"
 
-    - name: extract wordpress tarball
-      unarchive:
-        src: "/{{ wordpress_parent_path }}/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
-        dest: "{{ wordpress_parent_path }}"
-        owner: "{{ wordpress_owner }}"
-        group: "{{ wordpress_group }}"
-        copy: no
+    - name: extract wordpress tarball (command)
+      command: "tar -zxvf {{ wordpress_parent_path }}/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
+    # - name: extract wordpress tarball
+    #   unarchive:
+    #     src: "/{{ wordpress_parent_path }}/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
+    #     dest: "{{ wordpress_parent_path }}"
+    #     owner: "{{ wordpress_owner }}"
+    #     group: "{{ wordpress_group }}"
+    #     copy: no
 
     - debug: msg="==> install site conf file for wordpress"
 
