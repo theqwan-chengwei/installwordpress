@@ -56,8 +56,10 @@
 
     - debug: msg="==>automate the '5-minute install' process"
       when: wp5minute_install
+      tags: wp5
 
     - name: trigger wordpress five minute install
       command: echo "trigger wordpress five minute install"
       when: wp5minute_install
       notify: wordpress five minute install
+      tags: wp5
