@@ -15,6 +15,10 @@
 
     - name: extract wordpress tarball (command)
       command: "tar -zxvf /tmp/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
+
+    - name: extract wordpress tarball (command)
+      command: "mv /tmp/wordpress /usr/share/wordpress"
+
     # - name: extract wordpress tarball
     #   unarchive:
     #     src: "/{{ wordpress_parent_path }}/wordpress-{{ wordpress_version }}-zh_TW.tar.gz"
